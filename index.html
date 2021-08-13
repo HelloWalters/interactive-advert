@@ -187,11 +187,20 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    .card-link span{
+    .card-link .link-content{
       pointer-events:stroke;
-    }
-    .card-link span:hover{
+      padding:5px;
       cursor: pointer !important;
+    }
+    .link-arrow {
+      width: 12px;
+      display: inline-block;
+      height: 12px;
+      vertical-align: -1px;
+      border: solid 2px;
+      border-bottom: none;
+      border-left: none;
+      transform: rotate(45deg);
     }
     
     @media screen and (min-width:670px){
@@ -236,7 +245,7 @@
   I have added a tiny bit of JavaScript functionality to make the item more interactive for desktop use. On desktop (IE excluded), try hovering over the item! ;) 
   <br><i>(This functionality has been prevented for mobile devices, as "hover" functionality is not present)</i>
 <br/>
-Many thanks, Andrew Walters
+Many thanks! Andrew Walters
 </p>
   <div id="card" class="card soft-shading">
         <div class="upper-card">
@@ -263,7 +272,7 @@ Many thanks, Andrew Walters
               <span class="card-provider">Gratis Versand, inkl. MwSt.</span>
           </div>
         </div>
-        <div class="card-link" onclick()="#"><span>Details & Auswahl &#8250;</span></div>
+        <div class="card-link" onclick()="#"><span class="link-content">Details & Auswahl<span class="link-arrow"></span></span></div>
   </div>
 
   <!-- Mobile Design - delete this once you are done. -->
