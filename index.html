@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework</title>
+  <link rel="stylesheet" href="styles/design.processed.css">
+  <link rel="stylesheet" href="styles/index.processed.css">
+  <link href='http://fonts.googleapis.com/css?family=Saira+Semi+Condensed:400,600' rel='stylesheet' type='text/css'>
+  <script src="scripts/index.js"></script>
+</head>
+<body>  
+<!--
+
+  Hi Future-Furby, 
+
+  We are very excited and happy to see that you want to be part of our team.
+  To prove your html/css knowledge please build us a product card component (see bellow) here on Codepen. 
+
+  As a first step please click on the tiny 'Fork' button in the bottom-right corner to make your own copy of this Codepen project.
+
+  Unfortunately our graphic designer is a little bit behind her schedule and she was able to only create the mobile version of the design. >:) You need to be creative and make it appealing on desktop as well. (The card's max. width is 670px on desktop.)
+
+  You can use any kind of html/css magic but please don't forget about the following: 
+    - Cross browser compatibility (modern browsers + ie11).
+    - SEO
+    - Accessibility 
+
+  You will find all the resources (texts, images, fonts) bellow.
+
+  Once you finished, SAVE your work and send us the link of the Codepen fork. 
+  (https://codepen.io/xxxxx/project/editor/xxxxxx - just copy the url from the address bar)
+
+  If necessary feel free to use the "External Resources" button above. 
+
+  Thanks, and happy coding! 
+
+  Peter & Peter
+
+  ---------------------------------------
+
+  Texts: 
+  ------
+  iPhone 7
+  Details & Auswahl
+  9999.99 €
+  529.00 €
+  Gratis Versand, inkl. MwSt.
+  999 € sparen
+
+  Images: 
+  -------
+  <img src="https://www.refurbed.de/files/pi/iphone-7-1544543368.jpg?t=resize&h=600&w=600"/>
+  <img src="svg/apple.svg"/>
+
+  Font:
+  -----
+  Saira SemiCondensed (400, 600) - embed it from Google Fonts
+
+  ---------------------------------------
+
+  -->
+  
+  <!-- >>> YOUR WORK COMES HERE <<< --> 
+
+  <style>
+    @import url(http://fonts.googleapis.com/css?family=Saira+Semi+Condensed:400,600);
+      *{font-family: "Saira Semi Condensed";}
+  </style>
+
+<style id="card-stylesheet">
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
+    }
+    #intro-message {
+      z-index: 0;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+      position: absolute;
+      top: 0px;
+      padding: 5px;
+      text-shadow: 0px 2px 5px #cccc;
+    }
+    .card {
+      z-index: 100;
+      background-color: white;
+      width: 300px;
+      min-width: 300px;
+      height: 420px;
+      border-radius: 5px;
+      border: solid 1.5px #d5d5d5;
+      padding: 25px;
+      display: grid;
+      transition-duration: 0.15s;
+    }
+    .soft-shading{
+      box-shadow: 0px 5px 10px -5px #60606060;
+    }
+    .card *{
+      cursor:default;
+      pointer-events: none;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    }
+    .price-container span {
+        display:block;
+        line-height:85%;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .card-title img {
+      height: 18px;
+      position: relative;
+      top: 3px;
+    }
+    .card-image {
+      width: 200px;
+    }
+    .card-savings {
+      background-color: #009d9d;
+      color: white;
+      text-align: center;
+      width: 80px !important;
+      border-radius: 10000px;
+      height: 80px !important;
+      position: relative;
+      top: -50px;
+      right: -80%;
+      transform: rotate(10.8deg);
+    }
+    .savings-price {
+      font-size: 21px;
+      top: 15px;
+      position: relative;
+    }
+    .savings-text {
+      font-size: 14px;
+      position: relative;
+      top: -16px;
+    }
+    .centre-card{
+      max-height:220px;
+      display: flex;
+      justify-content: center;
+    }
+    .card-image-wrap {
+      width: min-content;
+      padding-top: 25px;
+    }
+    
+    .card-mainprice {
+      color: #009d9d;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .card-mainprice {
+      color: #009d9d;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .card-oldprice {
+      font-size: 22px;
+      padding-bottom: 15px;
+      color: #707070;
+      text-decoration: line-through;
+    }
+    .card-provider {
+      color: #888;
+    }
+    .card-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: #3968c8;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .card-link span{
+      pointer-events:stroke;
+    }
+    .card-link span:hover{
+      cursor: pointer !important;
+    }
+    
+    @media screen and (min-width:670px){
+      .card {
+        display: inline-block !important;
+        width:80%;
+        max-width: 670px;
+      }
+      .upper-card{
+        float: left;
+      }
+      .centre-card {
+        max-height: 220px;
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: -15%;
+      }
+      .centre-card .card-image-wrap img{
+        width: 300px;
+      }
+      .lower-card{
+        padding-top: 50px;
+      }
+    }
+/* extra content for IE compatibility on smaller screens*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /*This adds additional spacing to all items within the item except for "iPhone 7" at the top of the card, as CSS grid styling is not fully compatible with IE.*/
+   .card div:not(:first-child) {
+      margin-top:10px;
+    }
+    .card{
+      margin-top: 350px;
+    }
+    
+    #intro-message {
+      padding: 0;
+    }
+}
+</style>
+<p id="intro-message">Hi there! Please find my finished piece below!
+  <br/>
+  I have added a tiny bit of JavaScript functionality to make the item more interactive for desktop use. On desktop (IE excluded), try hovering over the item! ;) 
+  <br><i>(This functionality has been prevented for mobile devices, as "hover" functionality is not present)</i>
+<br/>
+Many thanks, Andrew Walters
+</p>
+  <div id="card" class="card soft-shading">
+        <div class="upper-card">
+          <div class="card-title">
+            <img src="svg/apple.svg"/>
+            iPhone 7
+          </div>
+        </div>
+        <div class="centre-card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="https://www.refurbed.de/files/pi/iphone-7-1544543368.jpg?t=resize&h=600&w=600"/>
+            <div class="card-savings  soft-shading">
+              <span class="savings-price">999 €
+                <br>
+                <span class="savings-text">sparen</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="lower-card">
+          <div class="price-container">
+              <span class="card-mainprice">9999.99 &euro;</span>
+              <span class="card-oldprice">529.00 &euro;</span>
+              <span class="card-provider">Gratis Versand, inkl. MwSt.</span>
+          </div>
+        </div>
+        <div class="card-link" onclick()="#"><span>Details & Auswahl &#8250;</span></div>
+  </div>
+
+  <!-- Mobile Design - delete this once you are done. -->
+  <!--<div class="design"></div>-->
+</body>
+</html>
