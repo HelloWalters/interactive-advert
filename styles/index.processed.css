@@ -5,3 +5,181 @@
 body {
   background: #f5f5f5;
 }
+
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+#intro-message {
+  z-index: 0;
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  padding: 5px;
+  text-shadow: 0px 2px 5px #cccc;
+}
+.card {
+  z-index: 100;
+  background-color: white;
+  width: 300px;
+  min-width: 300px;
+  height: 420px;
+  border-radius: 5px;
+  border: solid 1.5px #d5d5d5;
+  padding: 25px;
+  display: grid;
+  transition-duration: 0.15s;
+}
+.soft-shading{
+  box-shadow: 0px 5px 10px -5px #60606060;
+}
+.card *{
+  cursor: default;
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+h1{
+  font-size: 16px;
+  display: inline-block;
+}
+.price-container span {
+    display: block;
+    line-height: 85%;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.card-title img {
+  height: 18px;
+  position: relative;
+  top: 3px;
+}
+.card-image {
+  width: 200px;
+}
+.card-savings {
+  background-color: #009d9d;
+  color: white;
+  text-align: center;
+  width: 80px !important;
+  border-radius: 10000px;
+  height: 80px !important;
+  position: relative;
+  top: -50px;
+  right: -80%;
+  transform: rotate(10.8deg);
+}
+.savings-price {
+  font-size: 21px;
+  top: 15px;
+  position: relative;
+}
+.savings-text {
+  font-size: 14px;
+  position: relative;
+  top: -16px;
+}
+.centre-card{
+  max-height:220px;
+  display: flex;
+  justify-content: center;
+}
+.card-image-wrap {
+  width: min-content;
+  padding-top: 25px;
+}
+
+.card-mainprice {
+  color: #009d9d;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card-mainprice {
+  color: #009d9d;
+  font-size: 24px;
+  font-weight: 600;
+}
+.card-oldprice {
+  font-size: 22px;
+  padding-bottom: 15px;
+  color: #707070;
+  text-decoration: line-through;
+}
+.card-provider {
+  color: #888;
+}
+.card-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #3968c8;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.card-link .link-content{
+  pointer-events:stroke;
+  padding:5px;
+  cursor: pointer !important;
+}
+.link-arrow {
+  width: 12px;
+  display: inline-block;
+  height: 12px;
+  vertical-align: -1px;
+  border: solid 2px;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+@media screen and (min-width:1080px){
+  .card {
+    display: inline-block !important;
+    width:50%;
+    max-width: 620px;
+  }
+  .upper-card{
+    float: left;
+  }
+  .centre-card {
+    max-height: 220px;
+    width: 100%;
+    justify-content: flex-end;
+    margin-left: -15%;
+  }
+  .centre-card .card-image-wrap img{
+    width: 300px;
+  }
+  .lower-card{
+    padding-top: 50px;
+  }
+}
+/* extra content for IE compatibility on smaller screens*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+/*This adds additional spacing to all items within the item except for "iPhone 7" at the top of the card, as CSS grid styling is not fully compatible with IE.*/
+.card div:not(:first-child) {
+  margin-top:10px;
+}
+.card{
+  margin-top: 350px;
+}
+
+#intro-message {
+  padding: 0;
+}
+}
